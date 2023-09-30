@@ -1,0 +1,7 @@
+<suite name="Regression Suite">
+	<test name="Automation">
+		<classes>
+			<class name="TestNGLogic.OrderAnnotations"/>
+		</classes>
+	</test>
+</suite>
