@@ -1,7 +1,7 @@
 <suite name="Regression Suite">
 	<test name="Automation">
 		<classes>
-			<class name="TestNGLogic.OrderAnnotations"/>
+			<class name="TestNGLogic.PriorityExecution"/>
 		</classes>
 	</test>
 </suite>
