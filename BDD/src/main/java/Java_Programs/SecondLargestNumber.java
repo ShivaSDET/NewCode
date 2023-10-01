@@ -1,71 +1,49 @@
 package Java_Programs;
 
+import java.util.Arrays;
+
 public class SecondLargestNumber {
-	public static void main(String[] args)
-	{
-		int[] arrayObject = {12,35,1,10,34,1};
+	public static void main(String[] args) {
+		int[] arrayObject = { 12, 35, 1, 10, 34, 1 };
 		int n = arrayObject.length;
-		print2largest(arrayObject, n);
+		print2LargestNumber(arrayObject,n);
+		thirdNumber(arrayObject, n);
+	}
+
+	public static void print2LargestNumber(int[] input, int arraySize) {
+		if (arraySize < 2) {
+			System.out.println("Invalid Input");
+			return;
+		}
+		Arrays.sort(input);
+		for(int i = arraySize-2; i>=0; i--) {
+			if (input[i] != input[arraySize - 1])
+			{
+				System.err.println("The Second Largest Number:"+input[i]);
+				return;
+			}
+		}
 		
+		System.out.println("There is no second largest number");
 	}
 	
-	public static void print2largests(int arr[], int arr_size)
+	public static void thirdNumber(int[] array, int arraySize)
 	{
-		int second;
-		// There should be at least two elements
-		if(arr_size<2)
+		if(arraySize<3)
 		{
 			System.out.println("Invalid Input");
 			return;
 		}
 		
-		int largest = second = Integer.MIN_VALUE;
-		//Find the largest number
-		for(int i = 0; i<arr_size; i++)
+		Arrays.sort(array);
+		for(int i=arraySize-3; i>=0; i--)
 		{
-			largest = Math.max(largest, arr[i]);
-		}
-		
-		for(int i =0; i<arr_size; i++)
-		{
-			if(arr[i]!=largest)
+			if(array[i]!=array[arraySize-1])
 			{
-				second = Math.max(second, arr[i]);
+				System.out.println("Third Largest Number: "+array[i]);
+				return;
 			}
 		}
-		
-		if(second == Integer.MIN_VALUE)
-			System.out.println("There is no second largest number");
-		else
-			System.out.println("The second largest number: "+second);
-		
-	}
-	
-	public static void print2largest(int arr[], int arr_size)
-	{
-		int second;
-		// There should be at least two elements
-		if(arr_size<2)
-		{
-			System.out.println("Invalid Input");
-			return;
-		}
-		
-		int largest = second = Integer.MIN_VALUE;
-		//Find the largest number
-		for(int i = 0; i<arr_size; i++)
-		{
-			largest = Math.max(largest, arr[i]);
-			if(arr[i]!=largest)
-			{
-				second = Math.max(second, arr[i]);
-			}
-		}
-		
-		if(second == Integer.MIN_VALUE)
-			System.out.println("There is no second largest number");
-		else
-			System.out.println("The second largest number: "+second);
-		
+		System.out.println("No Third Largest Number");
 	}
 }
